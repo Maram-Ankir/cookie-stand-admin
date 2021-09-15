@@ -4,8 +4,9 @@ import ReportTable from "./ReportTable";
 
 export default function Main() {
   const [store, setStore] = useState([])
-  // const[workingHours,setworkingHours]=useState(['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'])
   // const [sales ,setSale]=useState([])
+  const [total,setTotal]=useState([])
+
   function handleForm(event) {
     event.preventDefault();
     const store_loc = {
@@ -18,7 +19,7 @@ export default function Main() {
     const hours =['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
  
     const hourly_sales=hours.map(()=>{
-      return Math.ceil(Math.ceil(store_loc.average*(Math.ceil(Math.random()*(store_loc.maximum-store_loc.minimum)+store_loc.minimum))))
+      return Math.floor((store_loc.average*((Math.random()*(store_loc.maximum-store_loc.minimum)+store_loc.minimum))))
     })
     // console.log(hourly_sales)
 
@@ -29,7 +30,12 @@ export default function Main() {
       sum:hourly_sales.reduce((a, b) => a + b, 0)
       
     }
+
     setStore(store => [...store, objectData])
+
+    const total ={
+
+    }
 
     // setStore(storess => [...storess, store_location])
 
