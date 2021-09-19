@@ -21,8 +21,8 @@ export default function Home() {
 {user ? (
                     <>
               
-                          {<CookieStandAdmin/>}
-                        
+                          {/* {} */}
+                          <Homepage/>
 
      {/* <button onClick={logout} className="p-2 text-white bg-gray-500 rounded">Logout</button> */}
 
@@ -30,7 +30,8 @@ export default function Home() {
                 ) : (
                     <>
                       
-                        <Homepage/>
+                      {<CookieStandAdmin/>}
+
                         {/* <button onClick={() => login('rudy', 'rudy')} className="p-2 text-white bg-gray-500 rounded">Login</button> */}
                     </>
                 )}
