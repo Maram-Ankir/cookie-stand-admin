@@ -15,9 +15,9 @@ export default function ReportTable({ store }, { totals }) {
                     <tr>
                         <th className="px-4 py-2">Location</th>
                         {
-                            workingHours.map(obj => {
+                            workingHours.map((obj, key) => {
                                 return (
-                                    <th className="px-4 py-2">{obj}</th>
+                                    <th key={`${key}`} className="px-4 py-2">{obj}</th>
                                 )
                             })
                         }
